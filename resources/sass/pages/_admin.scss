@@ -1,0 +1,32 @@
+#admin-nav {
+  position: relative;
+
+  .menu-box {
+    height: 70px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+  a {
+    line-height: 40px;
+    vertical-align: middle;
+  }
+}
+
+
+//Browse
+
+.masonry {
+  .item {
+    position: relative;
+
+    .info-block {
+      float: right;
+      position: absolute;
+      bottom: 10px;
+      right: 20px;
+    }
+  }
+}
+
+

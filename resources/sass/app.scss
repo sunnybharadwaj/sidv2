@@ -1,0 +1,26 @@
+
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Catamaran:400,700,800&display=swap');
+
+// Variables
+@import 'responsive';
+@import 'variables';
+@import 'partials';
+@import 'components';
+@import 'animations';
+
+//Pages
+@import 'pages/browse';
+@import 'pages/viewer';
+@import 'pages/add_photo';
+@import 'pages/admin';
+
+@import 'general';
+
+

@@ -1,0 +1,27 @@
+@media (min-width: 576px) {
+  .masonry {
+    column-count: 1;
+  }
+}
+@media (min-width: 768px) {
+  .masonry {
+    column-count: 2;
+    column-gap: 0.7em;
+  }
+}
+@media (min-width: 992px) {
+  .masonry {
+    column-count: 2;
+    column-gap: 0.7em;
+  }
+}
+@media (min-width: 1200px) {
+  .masonry {
+    column-count: 3;
+    column-gap: 0.7em;
+
+    &.two {
+      column-count: 2;
+    }
+  }
+}
