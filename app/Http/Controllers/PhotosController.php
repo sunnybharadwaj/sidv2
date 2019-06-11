@@ -15,6 +15,12 @@ class PhotosController extends Controller
         return 'display all photographs';
     }
 
+    public function create()
+    {
+        $tags = \App\Tag::all();
+        return view('admin.photos.create', compact('tags'));
+    }
+
     public function show($id)
     {
 //        return Article::find($id);
@@ -78,7 +84,20 @@ class PhotosController extends Controller
 
     public function delete($id)
     {
-        Photo::find($id)->delete();
+
+        $photo = Photo::find($id);
+        $photoTags = $photo->tags;
+        $photo->delete();
+        foreach ($photoTags as $photoTag) {
+            $photoTagId = $photoTag->id;
+//            if there are no photos for $photoTag, delete $photoTag
+            $photos = Photo::whereHas('tags', function($query) use ($photoTagId) {
+                $query->where('id', $photoTagId);
+            })->get();
+            if(count($photos) < 1) {
+                Tag::find($photoTagId)->delete();
+            }
+        }
         return redirect('/admin');
 //        return 204;
     }

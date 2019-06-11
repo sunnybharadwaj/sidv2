@@ -17,7 +17,6 @@ class AdminController extends Controller
 
     public function upload()
     {
-        $tags = \App\Tag::all();
-        return view('admin.photos.create', compact('tags'));
+
     }
 }

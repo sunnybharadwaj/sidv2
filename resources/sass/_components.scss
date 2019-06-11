@@ -7,11 +7,10 @@
 
   color: $button-color;
   border-bottom: 3px solid $button-color;
-  opacity: 0.5;
 
   &:hover {
     cursor: pointer;
-    opacity: 0.9;
+    border-bottom: 3px solid $yellow;
   }
 
   &.lg {

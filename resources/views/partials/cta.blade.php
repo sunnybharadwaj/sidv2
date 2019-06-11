@@ -1,10 +1,9 @@
 <section id="footer-cta">
     <div class="container mx-auto text-center">
-        <h1 class="mx-auto">Morbi orci ligula, dignissim mauris
-            vitae, egestas ullamcorper.</h1>
-        <div class="mb-12"></div>
+        <h1 class="mx-auto">Available for work!</h1>
+        <div class="mb-6"></div>
         <div class="text-center">
-            <div class="text-btn md">Hire me</div>
+            <div class="text-btn md">Get in touch</div>
         </div>
     </div>
 </section>

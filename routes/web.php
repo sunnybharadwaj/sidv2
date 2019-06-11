@@ -14,8 +14,9 @@
 Route::group([], function() {
     Route::get('/', 'PagesController@landing');
     Route::get('/browse', 'PagesController@browse');
-    Route::get('/category', 'PagesController@category');
-    Route::get('/photo', 'PagesController@photo');
+    Route::get('/category/{id}', 'PagesController@category');
+    Route::get('/photo/{id}', 'PagesController@photo');
+    Route::get('/videos', 'PagesController@videos');
 });
 
 Route::group(['middleware' => 'auth'], function () {
@@ -25,15 +26,22 @@ Route::group(['middleware' => 'auth'], function () {
 //    Route::get('/photos', 'PhotosController@index');
 //    Route::get('/photos/create', 'PhotosController@create');
 //    Route::post('/photo', 'PhotosController@store');
+    Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 });
+
+
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('photos', 'PhotosController@index');
-    Route::get('photos/{id}', 'PhotosController@show');
+    Route::get('photos/create', 'PhotosController@create');
     Route::post('photos', 'PhotosController@store');
     Route::get('edit/photos/{id}', 'PhotosController@edit');
     Route::patch('photos/{id}', 'PhotosController@update');
     Route::delete('photos/{id}', 'PhotosController@delete');
+
+
+    Route::get('/videos/create', 'VideosController@create');
+    Route::post('/videos', 'VideosController@store');
 });
 
 

@@ -11,7 +11,16 @@
 
 
         <div class="container mx-auto">
-            <h2 class="mb-4">All Images</h2>
+            <h2 class="mb-4">Welcome Siddharth!</h2>
+
+            Photos
+            Add Browse
+
+            Videos
+            Add Browse
+
+
+
             <div class="masonry">
                 @foreach($photos as $photo)
                     <div class="item flex-col">

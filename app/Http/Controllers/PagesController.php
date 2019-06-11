@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Tag;
 use App\Photo;
+use App\Video;
 
 use Illuminate\Http\Request;
 
@@ -20,24 +21,46 @@ class PagesController extends Controller
     {
         $tags = Tag::all();
         $imgLocations = [];
-        array_push($imgLocations, 'placeholder');
         foreach($tags as $tag) {
             $tagId = $tag->id;
-            $photo = Photo::whereHas('tags', function($query) use ($tagId) {
+            $photos = Photo::whereHas('tags', function($query) use ($tagId) {
                 $query->where('id', $tagId);
             })->get();
-            array_push($imgLocations, $photo[0]->thumbnail_sd);
+            if (count($photos) > 0) {
+                array_push($imgLocations, $photos[0]->thumbnail_sd);
+            }
+
         }
+
         return view('pages.browse', compact('tags', 'imgLocations'));
     }
 
-    public function category()
+    public function category($id)
     {
-        return view('pages.category');
+        $tagId = $id;
+        $photos = Photo::whereHas('tags', function($query) use ($tagId) {
+            $query->where('id', $tagId);
+        })->get();
+        $tag = Tag::find($id);
+        $tagName = $tag->tag;
+
+        return view('pages.category', compact('photos', 'tagName'));
     }
 
-    public function photo()
+    public function photo($id)
     {
-        return view('pages.viewer');
+        $photo = Photo::find($id);
+        $tags = $photo->tags;
+
+        $previous = Photo::where('id', '<', $photo->id)->max('id');
+        $next = Photo::where('id','>', $photo->id)->min('id');
+
+        return view('pages.viewer', compact('photo','tags', 'previous','next'));
+    }
+
+    public function videos()
+    {
+        $videos = Video::all();
+        return view('pages.videos', compact('videos'));
     }
 }

@@ -7,9 +7,11 @@
         <div class="masonry">
 
             @foreach($photos as $photo)
-                <div class="item">
-                    <img class="w-full sd-img" src="{{url($photo->thumbnail_sd)}}" alt="">
-                </div>
+                <a href="/photo/{{$photo->id}}">
+                    <div class="item">
+                        <img class="w-full sd-img" src="{{url($photo->thumbnail_sd)}}" alt="">
+                    </div>
+                </a>
             @endforeach
         </div>
     </div>

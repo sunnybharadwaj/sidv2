@@ -28,13 +28,14 @@
                         <a class="menu-item mr-6" href="/admin">Dashboard</a>
                     </li>
                     <li>
-                        <a class="menu-item mr-6" href="/admin/upload">Upload a new image</a>
+                        <a class="menu-item mr-6" href="/admin/upload">+ Add Image</a>
                     </li>
                     <li>
-                        <a class="menu-item " href="{{ route('logout') }}"
-                           onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
+                        <a class="menu-item mr-6" href="/admin/upload">+ Add Video</a>
+                    </li>
+                    <li>
+                        <a class="menu-item " href="/logout">
+                            Logout
                         </a>
                     </li>
                 </ul>
@@ -94,6 +95,7 @@
             {{--</nav>--}}
         </div>
 
+        <div class="mb-2"></div>
 
         <main class="py-4">
             @yield('content')

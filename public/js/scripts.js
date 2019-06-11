@@ -25,6 +25,15 @@ $('#photo_sd').change(function () {
     $(this).prev('label').removeClass('labeled').text(fileName);
 });
 
+$('#thumbnail_url').change(function() {
+    let fileName = $('#thumbnail_url').val().split('\\');
+    fileName = fileName[fileName.length - 1];
+    $(this).prev('label').removeClass('labeled').text(fileName);
+});
+
 $('.item').click(function() {
     $(this).children('.full-page-bg').toggleClass('hidden');
 });
+
+
+

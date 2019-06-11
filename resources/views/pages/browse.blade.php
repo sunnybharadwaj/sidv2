@@ -5,21 +5,18 @@
 
     <div id="browse" class="container mx-auto">
         <div class="masonry two">
-
-            @foreach($tags as $tag)
-                <div class="item">
-                    <div class="overlay">
-                        <h1 class="category-name">{{$tag->tag}}</h1>
+            @foreach($tags as $key=>$tag)
+                <a href="/category/{{$tag->id}}">
+                    <div class="item">
+                        <div class="overlay">
+                            <h1 class="category-name">{{$tag->tag}}</h1>
+                        </div>
+                        @if (count($imgLocations) > 0)
+                            <img class="w-full sd-img" src="{{$imgLocations[$key]}}" alt="">
+                        @endif
                     </div>
-                    <img class="w-full sd-img" src="{{$imgLocations[1]}}" alt="">
-                </div>
+                </a>
             @endforeach
-            <div class="item">
-                <div class="overlay">
-                    <h1 class="category-name">Nature</h1>
-                </div>
-                <img class="w-full sd-img" src="{{url('media/images/1sd.jpg')}}" alt="">
-            </div>
         </div>
     </div>
 

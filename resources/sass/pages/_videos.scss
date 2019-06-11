@@ -1,0 +1,75 @@
+.yt-cta {
+  font-size: 20px !important;
+  position: absolute;
+  right: 20px;
+  top: 30px;
+  &:hover {
+    border-color: #ff0000;
+  }
+  .yt-icon {
+    display: inline-block;
+    width: 20px;
+    margin-right: 10px;
+  }
+}
+
+.video-container {
+  position: relative;
+  left: 5px;
+}
+
+.video-item {
+  position: relative;
+  display: inline-block;
+  margin: 0 0 30px;
+  padding: 0;
+
+  .vid-title {
+    margin-top: 10px;
+    margin-left: 5px;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .item {
+    position: relative;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    &:hover {
+      cursor: pointer;
+      .overlay {
+        display: block;
+      }
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+
+
+      .button {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        color: white;
+        opacity: 0.9;
+      }
+    }
+
+    iframe {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+}
