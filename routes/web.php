@@ -40,6 +40,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::delete('photos/{id}', 'PhotosController@delete');
 
 
+    Route::get('/videos/browse', 'VideosController@index');
     Route::get('/videos/create', 'VideosController@create');
     Route::post('/videos', 'VideosController@store');
 });

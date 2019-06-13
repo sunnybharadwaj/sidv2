@@ -10,47 +10,44 @@
 
 
 
-        <div class="container mx-auto">
-            <h2 class="mb-4">Welcome Siddharth!</h2>
+    <div class="container mx-auto">
+        <h2 class="greeting">Welcome Siddharth,</h2>
+<div class="mb-6"></div>
 
-            Photos
-            Add Browse
-
-            Videos
-            Add Browse
-
+        <div id="components">
+            <h2 class="section-title">Components</h2>
+            <div class="flex flex-wrap">
+                <div class="component w-1/3 flex">
 
 
-            <div class="masonry">
-                @foreach($photos as $photo)
-                    <div class="item flex-col">
-                        <div class="image block">
-                            <img class="w-full sd-img" src="{{url($photo->thumbnail_sd)}}" alt="">
-                        </div>
-
-                        <div class="info-block flex block">
-                            {{--title--}}
-                            {{--buttons--}}
-
-                            {{--Edit --}}
-                            <a href="/edit/photos/{{$photo->id}}" class="border-btn inline-block">Edit</a>
-
-                            <form method="post" class="p-0 ml-2" action="/photos/{{$photo->id}}">
-                                {{ method_field('DELETE') }}
-                                @csrf
-                                <button class="border-btn" type="submit">Delete</button>
-                            </form>
-
-                            {{--Enable --}}
-                            {{--Disable--}}
-                        </div>
+                    <div class="text-content">
+                        <h2>Photos</h2>
+                        <a href="/photos">Browse</a>
+                        <a href="/photos/create">Create</a>
                     </div>
+                    <span class="component-icon">
+                        <img src="/media/icons/photos.svg" alt="" class="w-full">
+                    </span>
 
+                </div>
+                <div class="component w-1/3 flex">
 
-
-                @endforeach
+                    <div class="text-content">
+                        <h2>Videos</h2>
+                        <a href="/videos">Browse</a>
+                        <a href="/videos/create">Create</a>
+                    </div>
+                    <span class="component-icon">
+                        <img src="/media/icons/videos.svg" alt="" class="w-full">
+                    </span>
+                </div>
             </div>
         </div>
+
+
+
+
+    </div>
 
 
 @endsection

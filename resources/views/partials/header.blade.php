@@ -20,7 +20,7 @@
             <a href="" class="">ShutterStock</a>
 
             <a href="">Instagram</a>
-            <a href="" class="{{request()->is('/contact') ? 'active' : ''}}">Contact</a>
+            <a href="" class="{{request()->is('contact') ? 'active' : ''}}">Contact</a>
         </div>
 
         <div class="project-cta text-btn md">Got a project for me?</div>

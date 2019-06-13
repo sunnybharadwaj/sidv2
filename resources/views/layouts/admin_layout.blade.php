@@ -19,28 +19,28 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
+<body id="admin">
+
+<nav id="nav" class="container mx-auto pb-2 mt-10 pb-2 mb-4">
+    <div class="logo inline-block max-w-xs p-1">
+        <a href="/">
+            <img class="w-full" src="{{url('/media/logo/admin_logo.svg')}}" alt="">
+        </a>
+    </div>
+
+
+
+    <div id="nav-menu" class="pt-2 pr-2">
+        <a href="/admin" class="home-btn inline-block"><img src="{{url('/media/icons/home_btn.svg')}}" alt="" class="w-full"></a>
+        <a href="" target="_blank">Analytics</a>
+        <a href="/logout" class="">Logout</a>
+    </div>
+
+</nav>
+
+
     <div id="app admin">
-        <div class="container mx-auto text-right relative">
-            <nav id="admin-nav">
-                <ul class="menu-box flex">
-                    <li>
-                        <a class="menu-item mr-6" href="/admin">Dashboard</a>
-                    </li>
-                    <li>
-                        <a class="menu-item mr-6" href="/admin/upload">+ Add Image</a>
-                    </li>
-                    <li>
-                        <a class="menu-item mr-6" href="/admin/upload">+ Add Video</a>
-                    </li>
-                    <li>
-                        <a class="menu-item " href="/logout">
-                            Logout
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <h1 class="text-left pt-4">Admin</h1>
+            {{--<h1 class="text-left pt-4">Admin</h1>--}}
 
             {{--<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm hidden">--}}
                 {{--<div class="container">--}}

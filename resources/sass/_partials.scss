@@ -130,13 +130,18 @@ footer{
   .link-container {
     display: inline-block;
     a {
-      margin-right: 35px;
-      opacity: 0.5;
+      font-weight: 500;
+      opacity: 1 !important;
+      display: inline-block;
+      margin-right: 40px;
       &:last-of-type {
         margin-right: 0;
       }
+      &.active {
+        border-bottom: 3px solid $yellow;
+      }
       &:hover {
-        opacity: 1;
+        border-bottom: 3px solid $yellow;
       }
     }
 

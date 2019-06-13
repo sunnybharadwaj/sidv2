@@ -1,16 +1,21 @@
-#admin-nav {
-  position: relative;
+#admin {
+  nav {
+    border-bottom: none !important;
+  }
+}
 
-  .menu-box {
-    height: 70px;
-    position: absolute;
-    right: 20px;
-    top: 20px;
+a.home-btn {
+  position: relative;
+  top: 4px;
+
+  &:hover {
+    border: none !important;
   }
-  a {
-    line-height: 40px;
-    vertical-align: middle;
-  }
+}
+
+.greeting {
+  letter-spacing: -0.03em;
+  font-weight: 400;
 }
 
 
@@ -26,6 +31,72 @@
       bottom: 10px;
       right: 20px;
     }
+  }
+}
+
+#components {
+  .section-title {
+    font-size: 18px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 40px;
+    color: #585858;
+    border-bottom: 3px solid #a9a9a9;
+    display: inline-block;
+  }
+}
+
+.component {
+  position: relative;
+  height: 130px;
+  border: 5px solid $admin-black;
+  margin-right: 20px;
+
+  .text-content {
+    padding: 15px 30px;
+
+  }
+
+  a {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 500;
+    margin-right: 20px;
+    margin-top: 2px;
+
+    &:hover {
+      color: black;
+      border-bottom: 4px solid $yellow;
+      opacity: 1;
+
+    }
+  }
+
+  h3 {
+    letter-spacing: -0.03em;
+    margin-top: 0;
+  }
+
+  h2 {
+    letter-spacing: -0.03em;
+    margin-top: 5px;
+  }
+
+  //&:hover {
+  //  cursor: pointer;
+  //  border-color:#8cb6ff;
+  //}
+
+
+
+  .component-icon {
+    height: 130px;
+    display: block;
+    max-width: 40px;
+    position: absolute;
+    top:15px;
+    right: 15px;
   }
 }
 

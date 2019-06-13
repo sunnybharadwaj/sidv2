@@ -7,6 +7,12 @@ use App\Video;
 
 class VideosController extends Controller
 {
+    public function index()
+    {
+//        $videos =
+        return view('admin.videos.browse');
+    }
+
     public function create()
     {
       return view('admin.videos.create');

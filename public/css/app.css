@@ -7729,16 +7729,22 @@ footer {
 }
 
 #footer-menu .link-container a {
-  margin-right: 35px;
-  opacity: 0.5;
+  font-weight: 500;
+  opacity: 1 !important;
+  display: inline-block;
+  margin-right: 40px;
 }
 
 #footer-menu .link-container a:last-of-type {
   margin-right: 0;
 }
 
+#footer-menu .link-container a.active {
+  border-bottom: 3px solid #f1f068;
+}
+
 #footer-menu .link-container a:hover {
-  opacity: 1;
+  border-bottom: 3px solid #f1f068;
 }
 
 .text-btn {
@@ -8214,20 +8220,22 @@ form .checkbox.field label {
   opacity: 1;
 }
 
-#admin-nav {
+#admin nav {
+  border-bottom: none !important;
+}
+
+a.home-btn {
   position: relative;
+  top: 4px;
 }
 
-#admin-nav .menu-box {
-  height: 70px;
-  position: absolute;
-  right: 20px;
-  top: 20px;
+a.home-btn:hover {
+  border: none !important;
 }
 
-#admin-nav a {
-  line-height: 40px;
-  vertical-align: middle;
+.greeting {
+  letter-spacing: -0.03em;
+  font-weight: 400;
 }
 
 .masonry .item {
@@ -8239,6 +8247,61 @@ form .checkbox.field label {
   position: absolute;
   bottom: 10px;
   right: 20px;
+}
+
+#components .section-title {
+  font-size: 18px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-bottom: 40px;
+  color: #585858;
+  border-bottom: 3px solid #a9a9a9;
+  display: inline-block;
+}
+
+.component {
+  position: relative;
+  height: 130px;
+  border: 5px solid #282828;
+  margin-right: 20px;
+}
+
+.component .text-content {
+  padding: 15px 30px;
+}
+
+.component a {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 500;
+  margin-right: 20px;
+  margin-top: 2px;
+}
+
+.component a:hover {
+  color: black;
+  border-bottom: 4px solid #f1f068;
+  opacity: 1;
+}
+
+.component h3 {
+  letter-spacing: -0.03em;
+  margin-top: 0;
+}
+
+.component h2 {
+  letter-spacing: -0.03em;
+  margin-top: 5px;
+}
+
+.component .component-icon {
+  height: 130px;
+  display: block;
+  max-width: 40px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
 }
 
 html, body {

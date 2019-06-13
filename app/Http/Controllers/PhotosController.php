@@ -11,8 +11,8 @@ class PhotosController extends Controller
 {
     public function index()
     {
-//        return Article::all();
-        return 'display all photographs';
+        $photos = Photo::all();
+        return view('admin.photos.browse', compact('photos'));
     }
 
     public function create()
