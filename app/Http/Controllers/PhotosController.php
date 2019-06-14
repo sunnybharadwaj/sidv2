@@ -49,10 +49,10 @@ class PhotosController extends Controller
 
         //        Store Images in directory
         $hd_file = $request->file('photo_hd');
-        $hd_url = $hd_file->putFile('photos_hd', ['disk' => 'images']);
+        $hd_url = $hd_file->Storage::putFile('photos_hd', ['disk' => 'images']);
 
         $sd_file = $request->file('photo_sd');
-        $sd_url = $sd_file->putFile('photos_sd', ['disk' => 'images']);
+        $sd_url = $sd_file->Storage::putFile('photos_sd', ['disk' => 'images']);
 
 
 //        Create a storage stack
