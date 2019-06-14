@@ -7,6 +7,7 @@ use App\Photo;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\UploadedFile;
 
 class PhotosController extends Controller
 {
@@ -50,17 +51,17 @@ class PhotosController extends Controller
 
         //        Store Images in directory
         $hd_file = $request->file('photo_hd');
-        $hd_url = $hd_file->Storage::putFile('photos_hd', ['disk' => 'images']);
+        $hd_url = $hd_file->store('photos_hd', ['disk' => 'public']);
 
         $sd_file = $request->file('photo_sd');
-        $sd_url = $sd_file->Storage::putFile('photos_sd', ['disk' => 'images']);
+        $sd_url = $sd_file->store('photos_sd', ['disk' => 'public']);
 
 
 //        Create a storage stack
         $photo = new Photo;
         $photo->title = $data['title'];
-        $photo->thumbnail_hd = "storage/app/public/media/" . $hd_url;
-        $photo->thumbnail_sd = "storage/app/public/media/" . $sd_url;
+        $photo->thumbnail_hd = "storage/" . $hd_url;
+        $photo->thumbnail_sd = "storage/" . $sd_url;
 //        Save
         $photo->save();
 

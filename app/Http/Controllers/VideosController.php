@@ -24,13 +24,13 @@ class VideosController extends Controller
 
         //        Store Images in directory
         $thumbnail = $request->file('thumbnail_url');
-        $thumbnail_url = $thumbnail->store('videos', ['disk' => 'images']);
+        $thumbnail_url = $thumbnail->store('videos', ['disk' => 'public']);
 
         //        Create a storage stack
         $video= new Video;
         $video->title = $data['title'];
         $video->link = $data['link'];
-        $video->thumbnail_url = "storage/app/public/media/" . $thumbnail_url;
+        $video->thumbnail_url = "storage/" . $thumbnail_url;
 
         //        Save
         $video->save();
