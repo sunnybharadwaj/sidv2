@@ -10,10 +10,10 @@
             <div class="mb-12"></div>
             {{--Services--}}
             <div class="services-listing flex items-center uppercase">
-                <h3 class="service w-full sm:w-full md:w-1/2 lg:1/4 p-2">Photography</h3>
-                <h3 class="service w-full sm:w-full md:w-1/2 lg:1/4 p-2">Videography</h3>
-                <h3 class="service w-full sm:w-full md:w-1/2 lg:1/4 p-2">Media Production</h3>
-                <h3 class="service w-full sm:w-full md:w-1/2 lg:1/4 p-2">Art Direction</h3>
+                <h3 class="service w-full sm:w-full md:w-full lg:1/3 p-2">Photography</h3>
+                <h3 class="service w-full sm:w-full md:w-full lg:1/3 p-2">Videography</h3>
+                <h3 class="service w-full sm:w-full md:w-full lg:1/3 p-2">Media Production</h3>
+
             </div>
             <div class="mb-6"></div>
 
