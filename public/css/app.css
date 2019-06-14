@@ -8034,7 +8034,7 @@ input[type=checkbox], textarea[type=checkbox] {
           transform: rotate(-90deg);
   -webkit-transform-origin: top left;
           transform-origin: top left;
-  font-size: 40px;
+  font-size: 32px;
   position: absolute;
   bottom: -60px;
 }
