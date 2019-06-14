@@ -9,6 +9,13 @@
     <title>Siddharth Bajpai</title>
 </head>
 <body>
+
+@if(Session::has('message'))
+    <div id="session-message">
+        <p class="alert">{{ Session::get('message') }}</p>
+    </div>
+
+@endif
     @include ('partials.loadscreen')
 
     @yield('content')
@@ -17,6 +24,6 @@
     {{--src="https://code.jquery.com/jquery-3.4.1.slim.js"--}}
     {{--integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="--}}
     {{--crossorigin="anonymous"></script>--}}
-    <script src="{{url('/js/scripts.js')}}"></script>
+    <script src="{{url('/js/app.js')}}"></script>
 </body>
 </html>

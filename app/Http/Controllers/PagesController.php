@@ -63,4 +63,9 @@ class PagesController extends Controller
         $videos = Video::all();
         return view('pages.videos', compact('videos'));
     }
+
+    public function contact()
+    {
+        return view('pages.contact');
+    }
 }

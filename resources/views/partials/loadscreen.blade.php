@@ -1,5 +1,5 @@
-<div id="load-screen" class="">
-    <div class="container mx-auto ">
+<div id="load-screen" class="active">
+    <div class="container mx-auto">
         <div class="content is-vertical-center">
 
             {{--Logo--}}

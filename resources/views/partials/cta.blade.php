@@ -3,7 +3,7 @@
         <h1 class="mx-auto">Available for work!</h1>
         <div class="mb-6"></div>
         <div class="text-center">
-            <div class="text-btn md">Get in touch</div>
+            <a href="/contact" class="text-btn md">Get in touch</a>
         </div>
     </div>
 </section>

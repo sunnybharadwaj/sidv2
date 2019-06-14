@@ -71,12 +71,12 @@ label {
   font-size: 18px;
 }
 
-input {
+input, textarea {
   display: block;
   font-size: 18px;
   padding: 8px 15px 5px;
   border: 3px solid rgba(0, 0, 0, 0.40);
-  min-width: 400px;
+  min-width: 500px;
   margin-bottom: 15px;
 
   &:focus  {
@@ -93,3 +93,17 @@ input {
   }
 }
 
+
+#session-message {
+  padding: 20px 20px 15px;
+  text-align: center;
+  font-size: 18px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  border-top: 3px solid $yellow;
+}

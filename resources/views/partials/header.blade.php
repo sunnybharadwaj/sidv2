@@ -13,17 +13,19 @@
             {{--<h3 class="service mr-2 p-2">Art Direction</h3>--}}
         </div>
 
-        <div id="nav-menu" class="pt-2 pr-2">
-            <a href="/browse" class="{{request()->is('browse') ? 'active' : ''}}">Photos</a>
-            {{--<a href="" class="{{request()->is('/activity') ? 'active' : ''}}">Activity</a>--}}
-            <a href="/videos" class="{{request()->is('videos') ? 'active' : ''}}">Videos</a>
-            <a href="" class="">ShutterStock</a>
+        <div id="mobile-nav-btn">Menu</div>
 
-            <a href="">Instagram</a>
-            <a href="" class="{{request()->is('contact') ? 'active' : ''}}">Contact</a>
+        <div id="mobile-menu" class="hidden">
+            <div class="close-btn">Close</div>
+            <h3 class="text-center mb-12">MENU</h3>
+            <a href="/home" class="">Home</a>
+            @include('partials.links')
+        </div>
+        <div id="nav-menu" class="pt-2 pr-2">
+            @include('partials.links')
         </div>
 
-        <div class="project-cta text-btn md">Got a project for me?</div>
+        <a href="/contact" class="project-cta text-btn md">Got a project for me?</a>
     </nav>
 </header>
 

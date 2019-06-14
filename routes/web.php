@@ -17,6 +17,8 @@ Route::group([], function() {
     Route::get('/category/{id}', 'PagesController@category');
     Route::get('/photo/{id}', 'PagesController@photo');
     Route::get('/videos', 'PagesController@videos');
+    Route::get('/contact', 'PagesController@contact');
+    Route::post('/contact', 'MessageController@store');
 });
 
 Route::group(['middleware' => 'auth'], function () {
