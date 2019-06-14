@@ -58,8 +58,8 @@ class PhotosController extends Controller
 //        Create a storage stack
         $photo = new Photo;
         $photo->title = $data['title'];
-        $photo->thumbnail_hd = "media/images/" . $hd_url;
-        $photo->thumbnail_sd = "media/images/" . $sd_url;
+        $photo->thumbnail_hd = "storage/app/public/media/" . $hd_url;
+        $photo->thumbnail_sd = "storage/app/public/media/" . $sd_url;
 //        Save
         $photo->save();
 

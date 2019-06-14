@@ -30,7 +30,7 @@ class VideosController extends Controller
         $video= new Video;
         $video->title = $data['title'];
         $video->link = $data['link'];
-        $video->thumbnail_url = "media/images/" . $thumbnail_url;
+        $video->thumbnail_url = "storage/app/public/media/" . $thumbnail_url;
 
         //        Save
         $video->save();

@@ -56,7 +56,7 @@ return [
         ],
         'images' => [
             'driver' => 'local',
-            'root' =>   public_path() . '/media/images'
+            'root' =>   public_path() . './storage/app/public/media',
         ],
         's3' => [
             'driver' => 's3',
