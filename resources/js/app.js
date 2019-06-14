@@ -29,14 +29,13 @@
 //     el: '#app',
 // });
 require('./bootstrap');
-// $.ajaxSetup({
-//     headers: {
-//         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-//     }
-// });
+
 //Load Screen
 window.onload = function() {
-    $('#load-screen').removeClass('active');
+    setTimeout(function() {
+        $('#load-screen').removeClass('active');
+    }, 800);
+
 };
 
 $('#mobile-nav-btn').click(function() {

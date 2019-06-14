@@ -48,6 +48,12 @@
     column-count: 2;
     column-gap: 0.7em;
   }
+
+  #load-screen {
+    .services-listing {
+      width: 80%;
+    }
+  }
 }
 @media (min-width: 992px) {
   .masonry {
