@@ -98,7 +98,7 @@ class PhotosController extends Controller
                 Tag::find($photoTagId)->delete();
             }
         }
-        return redirect('/admin');
+        return redirect()->back();
 //        return 204;
     }
 }

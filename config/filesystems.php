@@ -56,7 +56,7 @@ return [
         ],
         'images' => [
             'driver' => 'local',
-            'root' =>  '/storage/app/public/media',
+            'root' =>  'storage/app/public/media',
         ],
         's3' => [
             'driver' => 's3',
