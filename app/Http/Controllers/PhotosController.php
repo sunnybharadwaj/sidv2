@@ -6,6 +6,7 @@ use App\Tag;
 use App\Photo;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PhotosController extends Controller
 {
