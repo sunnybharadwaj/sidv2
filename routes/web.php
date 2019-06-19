@@ -15,7 +15,9 @@ Route::group([], function() {
     Route::get('/', 'PagesController@landing');
     Route::get('/browse', 'PagesController@browse');
     Route::get('/category/{id}', 'PagesController@category');
-    Route::get('/photo/{id}', 'PagesController@photo');
+
+
+    Route::get('/photo/{category}/{id}', 'PagesController@viewer');
     Route::get('/videos', 'PagesController@videos');
     Route::get('/contact', 'PagesController@contact');
     Route::post('/contact', 'MessageController@store');

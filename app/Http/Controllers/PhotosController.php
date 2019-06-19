@@ -71,7 +71,8 @@ class PhotosController extends Controller
         return redirect('/admin');
     }
 
-    public function edit($id) {
+    public function edit($id)
+    {
         $photo = \App\Photo::find($id);
         $tags = \App\Tag::all();
 //        dd($photo->tags);
@@ -93,10 +94,10 @@ class PhotosController extends Controller
         foreach ($photoTags as $photoTag) {
             $photoTagId = $photoTag->id;
 //            if there are no photos for $photoTag, delete $photoTag
-            $photos = Photo::whereHas('tags', function($query) use ($photoTagId) {
+            $photos = Photo::whereHas('tags', function ($query) use ($photoTagId) {
                 $query->where('id', $photoTagId);
             })->get();
-            if(count($photos) < 1) {
+            if (count($photos) < 1) {
                 Tag::find($photoTagId)->delete();
             }
         }

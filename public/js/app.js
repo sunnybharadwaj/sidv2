@@ -34978,8 +34978,29 @@ window.onload = function () {
   setTimeout(function () {
     $('#load-screen').removeClass('active');
   }, 800);
-};
+}; //Slideshow control
+// if(window.location)
+//next
 
+
+$('.next').click(function () {
+  var currentElem = $('.slideshow-wrapper .photo.active');
+  var nextElem = currentElem.next(); //if there are more images
+
+  console.log(nextElem);
+
+  if (nextElem) {
+    currentElem.removeClass('active');
+    currentElem.next().addClass('active');
+  }
+}); //prev
+
+$('.prev').click(function () {
+  var currentElem = $('.slideshow-wrapper .photo.active'); //if there are more images
+
+  currentElem.removeClass('active');
+  currentElem.prev().addClass('active');
+});
 $('#mobile-nav-btn').click(function () {
   $('#mobile-menu').removeClass('hidden');
 });

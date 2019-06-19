@@ -47,7 +47,7 @@ class PagesController extends Controller
         return view('pages.category', compact('photos', 'tagName'));
     }
 
-    public function photo($id)
+    public function viewer($id)
     {
         $photo = Photo::find($id);
         $tags = $photo->tags;
