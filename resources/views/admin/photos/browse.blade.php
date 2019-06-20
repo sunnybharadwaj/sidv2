@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="container mx-auto">
+        <a href="/photos/create" class="mb-8"><h2 class="mb-4">Add a new photo</h2></a>
         <div class="masonry">
             @foreach($photos as $photo)
                 <div class="item flex-col">

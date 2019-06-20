@@ -23,15 +23,16 @@
 
 <nav id="nav" class="container mx-auto pb-2 mt-10 pb-2 mb-4">
     <div class="logo inline-block max-w-xs p-1">
-        <a href="/">
+        <a href="/admin">
             <img class="w-full" src="{{url('/media/logo/admin_logo.svg')}}" alt="">
         </a>
     </div>
 
 
     <div id="nav-menu" class="pt-2 pr-2">
-        <a href="/admin" class="home-btn inline-block"><img src="{{url('/media/icons/home_btn.svg')}}" alt=""
+        <a href="{{url('admin')}}" class="home-btn inline-block"><img src="{{url('/media/icons/home_btn.svg')}}" alt=""
                                                             class="w-full"></a>
+        <a href="/">Site</a>
         <a href="" target="_blank">Analytics</a>
         <a href="/logout" class="">Logout</a>
     </div>
@@ -103,13 +104,9 @@
 
 <script
         src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+        integrity="sz–πha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
         crossorigin="anonymous"></script>
 
-<script>
-    asdf
-    console.log($('#mobile-nav-btn'));
-</script>
-<script src="{{ asset('js/app.js') }}"></script>
+<script src="{{ asset('js/admin.js') }}"></script>
 </body>
 </html>

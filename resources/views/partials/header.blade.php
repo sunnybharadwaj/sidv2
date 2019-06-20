@@ -18,7 +18,7 @@
         <div id="mobile-menu" class="hidden">
             <div class="close-btn">Close</div>
             <h3 class="text-center mb-12">MENU</h3>
-            <a href="/home" class="">Home</a>
+            <a href="/" class="">Home</a>
             @include('partials.links')
         </div>
         <div id="nav-menu" class="pt-2 pr-2">

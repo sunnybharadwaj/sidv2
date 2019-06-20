@@ -11,9 +11,7 @@
                         <div class="overlay">
                             <h1 class="category-name">{{$tag->tag}}</h1>
                         </div>
-                        @if (count($imgLocations) > 0)
-                            <img class="w-full sd-img" src="{{$imgLocations[$key]}}" alt="">
-                        @endif
+                        <img class="w-full sd-img" src="{{$tag->cover_img}}" alt="">
                     </div>
                 </a>
             @endforeach

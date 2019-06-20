@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Tag;
 use App\Photo;
 use App\Video;
-
+use Exception;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -21,9 +21,9 @@ class PagesController extends Controller
     {
         $tags = Tag::all();
         $imgLocations = [];
-        foreach($tags as $tag) {
+        foreach ($tags as $tag) {
             $tagId = $tag->id;
-            $photos = Photo::whereHas('tags', function($query) use ($tagId) {
+            $photos = Photo::whereHas('tags', function ($query) use ($tagId) {
                 $query->where('id', $tagId);
             })->get();
             if (count($photos) > 0) {
@@ -38,25 +38,50 @@ class PagesController extends Controller
     public function category($id)
     {
         $tagId = $id;
-        $photos = Photo::whereHas('tags', function($query) use ($tagId) {
+        $photos = Photo::whereHas('tags', function ($query) use ($tagId) {
             $query->where('id', $tagId);
         })->get();
         $tag = Tag::find($id);
         $tagName = $tag->tag;
-
-        return view('pages.category', compact('photos', 'tagName'));
+        $categoryId = $tagId;
+        return view('pages.category', compact('photos', 'tagName', 'categoryId'));
     }
 
-    public function viewer($id)
+    public function viewImage($categoryId, $photoId)
     {
-        $photo = Photo::find($id);
-        $tags = $photo->tags;
-
-        $previous = Photo::where('id', '<', $photo->id)->max('id');
-        $next = Photo::where('id','>', $photo->id)->min('id');
-
-        return view('pages.viewer', compact('photo','tags', 'previous','next'));
+        $photo = Photo::find($photoId);
+        return view('pages.viewer', compact('photo', 'categoryId'));
     }
+
+    public function nextImage($categoryId, $photoId) {
+        $photo = Photo::find($photoId);
+
+        if((string)$categoryId === "0") {
+            $next = Photo::where('id', '>', $photo->id)->min('id');
+            return redirect('/photo/' . $categoryId . '/' . $next);
+        } else {
+            $next = Photo::whereHas('tags', function ($query) use ($categoryId) {
+                $query->where('id', $categoryId);
+            })->where('id', '>', $photo->id)->min('id');
+            return redirect('/photo/' . $categoryId . '/' . $next);
+        }
+    }
+
+    public function prevImage($categoryId, $photoId) {
+        $photo = Photo::find($photoId);
+
+        if((string)$categoryId === "0") {
+            $previous = Photo::where('id', '<', $photo->id)->max('id');
+            return redirect('/photo/' . $categoryId . '/' . $previous);
+
+        } else {
+            $previous = Photo::whereHas('tags', function ($query) use ($categoryId) {
+                $query->where('id', $categoryId);
+            })->where('id', '<', $photo->id)->max('id');
+            return redirect('/photo/' . $categoryId . '/' . $previous);
+        }
+    }
+
 
     public function videos()
     {
@@ -67,5 +92,9 @@ class PagesController extends Controller
     public function contact()
     {
         return view('pages.contact');
+    }
+
+    public function returnHome() {
+        return redirect('/browse');
     }
 }

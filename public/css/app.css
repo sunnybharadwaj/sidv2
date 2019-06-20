@@ -8021,22 +8021,21 @@ input[type=checkbox], textarea[type=checkbox] {
   z-index: 100;
   height: 100%;
   width: 100%;
-  top: 0;
+  bottom: 0;
   left: 0;
-  background: linear-gradient(90deg, black, rgba(246, 246, 246, 0), rgba(246, 246, 246, 0));
+  right: 0;
+  background: linear-gradient(360deg, black, rgba(246, 246, 246, 0), rgba(246, 246, 246, 0));
 }
 
 #browse .item .category-name {
+  line-height: 1;
   color: white;
   opacity: 0.9;
   padding: 10px;
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
-  -webkit-transform-origin: top left;
-          transform-origin: top left;
-  font-size: 32px;
+  font-size: 42px;
   position: absolute;
-  bottom: -60px;
+  bottom: 2px;
+  left: 8px;
 }
 
 #browse .item img {
@@ -8079,6 +8078,7 @@ h1.category-title {
   left: 3em;
   bottom: 3em;
   right: 3em;
+  z-index: 1003;
 }
 
 #side-bar .viewer-nav a {
@@ -8114,8 +8114,6 @@ h1.category-title {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   z-index: 1002;
-  display: none;
-  opacity: 0;
   transition: all 300ms ease-in-out;
 }
 
@@ -8169,7 +8167,7 @@ h1.category-title {
   width: auto;
   bottom: 30px;
   right: 30px;
-  z-index: 1003;
+  z-index: 2001;
   transition: all 0.3ms ease-in-out;
 }
 
@@ -8187,6 +8185,19 @@ h1.category-title {
 #photo-block .hover-buttons .hover-btn:hover {
   opacity: 1;
   cursor: pointer;
+}
+
+.fullscreen {
+  background: black;
+  width: 100% !important;
+  position: fixed !important;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 2000 !important;
+  width: 100%;
+  height: 100vh;
 }
 
 form {
@@ -8254,10 +8265,13 @@ a.home-btn:hover {
 }
 
 .component {
+  display: block;
   position: relative;
   height: 130px;
   border: 5px solid #282828;
+  width: 100%;
   margin-right: 20px;
+  margin-bottom: 20px;
 }
 
 .component .text-content {
@@ -8337,6 +8351,12 @@ a:hover {
   cursor: pointer;
 }
 
+.disabled {
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+}
+
 .masonry .item {
   margin-bottom: 0.7em;
   border-radius: 2px;
@@ -8357,6 +8377,19 @@ a:hover {
 
 .tag {
   display: inline-block;
+}
+
+.masonry .item {
+  transition: all 150ms ease-in-out;
+}
+
+.masonry .item:hover,
+.masonry .item:focus {
+  opacity: 0.9;
+}
+
+.masonry .item:active {
+  top: 1px;
 }
 
 @media (max-width: 768px) {

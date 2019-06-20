@@ -4,9 +4,11 @@
 
     <div class="container mx-auto">
 
-        <form class="ui form px-1 my-12" method="POST" action="/photos" enctype="multipart/form-data">
-            <h2>Update post</h2>
+        <form class="ui form px-1 my-12" method="POST" action="/photos/{{$photo->id}}" enctype="multipart/form-data">
             @csrf
+            @method('patch')
+            <h2>Update post</h2>
+
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
@@ -16,6 +18,12 @@
                     </ul>
                 </div>
             @endif
+            
+            <div class="field">
+                <label for="">Current Photo:</label>
+                <img src="{{$photo->thumbnail_sd}}" alt="">
+            </div>
+            
             <div class="field">
                 <label for="title">Title</label>
                 <input id="title" name="title" type="text" class="" value="{{$photo->title}}">
@@ -36,20 +44,6 @@
                             </div>
                         </div>
                     @endforeach
-                </div>
-                <input type="text" name="tags[]" class="hidden" value="null">
-
-
-                {{--Show if Add a tag is clicked--}}
-                <div id="add-tags" class="mb-4">
-                    <div id="font-bold" class="font-bold mb-2">+ Add Tag(s)</div>
-                    <div id="tag-inputs">
-
-                        <input type="text" name="newtags[]" class="another-tag block mb-2" placeholder="Tag">
-                    </div>
-
-
-                    <a id="another-tag" href="javascript:void(0);" class="form-inline-btn">Add another Tag</a>
                 </div>
             </div>
 

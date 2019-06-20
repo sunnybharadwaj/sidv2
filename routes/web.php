@@ -15,16 +15,16 @@ Route::group([], function() {
     Route::get('/', 'PagesController@landing');
     Route::get('/browse', 'PagesController@browse');
     Route::get('/category/{id}', 'PagesController@category');
-
-
-    Route::get('/photo/{category}/{id}', 'PagesController@viewer');
+    Route::get('/photo/{categoryId}', 'PagesController@returnHome');
+    Route::get('/photo/{categoryId}/{photoId}', 'PagesController@viewImage');
+    Route::get('/next/{categoryId}/{photoId}', 'PagesController@nextImage');
+    Route::get('/prev/{categoryId}/{photoId}', 'PagesController@prevImage');
     Route::get('/videos', 'PagesController@videos');
     Route::get('/contact', 'PagesController@contact');
-    Route::post('/contact', 'MessageController@store');
+    Route::post('/contact', 'MessagesController@store');
 });
 
 Route::group(['middleware' => 'auth'], function () {
-//Route::group([], function() {
     Route::get('/admin', 'AdminController@dash');
     Route::get('/admin/upload', 'AdminController@upload');
 //    Route::get('/photos', 'PhotosController@index');
@@ -36,17 +36,29 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('photos', 'PhotosController@index');
-    Route::get('photos/create', 'PhotosController@create');
-    Route::post('photos', 'PhotosController@store');
-    Route::get('edit/photos/{id}', 'PhotosController@edit');
-    Route::patch('photos/{id}', 'PhotosController@update');
-    Route::delete('photos/{id}', 'PhotosController@delete');
-
-
-    Route::get('/videos/browse', 'VideosController@index');
+//    Photos
+    Route::get('/photos', 'PhotosController@index');
+    Route::get('/photos/create', 'PhotosController@create');
+    Route::post('/photos', 'PhotosController@store');
+    Route::get('/edit/photos/{id}', 'PhotosController@edit');
+    Route::patch('/photos/{id}', 'PhotosController@update');
+    Route::delete('/photos/{id}', 'PhotosController@delete');
+//    Videos
+    Route::get('/admin/videos', 'VideosController@index');
     Route::get('/videos/create', 'VideosController@create');
     Route::post('/videos', 'VideosController@store');
+    Route::get('/edit/videos/{id}', 'VideosController@edit');
+    Route::patch('/videos/{id}', 'VideosController@update');
+    Route::delete('/videos/{id}', 'VideosController@delete');
+//    Tags/Categories
+    Route::get('/tags', 'TagsController@index');
+    Route::get('/tags/create', 'TagsController@create');
+    Route::post('/tags', 'TagsController@store');
+    Route::get('/edit/tags/{id}', 'TagsController@edit');
+    Route::patch('/tags/{id}', 'TagsController@update');
+    Route::delete('/tags/{id}', 'TagsController@delete');
+
+    Route::resource('links', 'LinksController');
 });
 
 

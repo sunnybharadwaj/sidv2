@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use \App\Message;
 
-class MessageController extends Controller
+class MessagesController extends Controller
 {
     //
     public function store()

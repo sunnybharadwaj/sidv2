@@ -33,21 +33,10 @@ class PhotosController extends Controller
     {
 
         $data = $request->all();
-        $newTags = $data['newtags'];
         $tags = $data['tags'];
-        array_pop($tags);
 
 
-        //        Check if there are new tags
-        if ($newTags[0] != null) {
-            //        Add new tags
-            foreach ($newTags as $tag) {
-                $newTag = Tag::create([
-                    'tag' => $tag
-                ]);
-                array_push($tags, (string)($newTag->id));
-            }
-        }
+//       todo: Check removing a tag
 
         //        Store Images in directory
         $hd_file = $request->file('photo_hd');
@@ -60,15 +49,14 @@ class PhotosController extends Controller
 //        Create a storage stack
         $photo = new Photo;
         $photo->title = $data['title'];
-        $photo->thumbnail_hd = "storage/" . $hd_url;
-        $photo->thumbnail_sd = "storage/" . $sd_url;
+        $photo->thumbnail_hd = "/storage/" . $hd_url;
+        $photo->thumbnail_sd = "/storage/" . $sd_url;
 //        Save
         $photo->save();
-
         $photo->tags()->attach($tags);
 
 //        Redirect with flash message
-        return redirect('/admin');
+        return redirect('/photos');
     }
 
     public function edit($id)
@@ -80,9 +68,37 @@ class PhotosController extends Controller
         return view('admin.photos.edit', compact('tags', 'photo'));
     }
 
-    public function update($id)
+    public function update(Request $request, $id)
     {
-//       put/patch /photos/id
+        $data = $request->all();
+        $tags = $data['tags'];
+
+
+        //       todo: Check removing a tag
+
+        $hd_file = $request->file('photo_hd');
+
+
+        $sd_file = $request->file('photo_sd');
+
+
+        $photo = Photo::find($id);
+        $photo->title = $data['title'];
+        if ($hd_file) {
+            $hd_url = $hd_file->store('photos_hd', ['disk' => 'public']);
+            $photo->thumbnail_hd = "/storage/" . $hd_url;
+        }
+
+        if ($sd_file) {
+                $sd_url = $sd_file->store('photos_sd', ['disk' => 'public']);
+                $photo->thumbnail_sd = "/storage/" . $sd_url;
+        }
+
+        $photo->tags()->detach();
+        $photo->tags()->attach($tags);
+        $photo->save();
+
+        return redirect('/photos');
     }
 
     public function delete($id)
@@ -101,7 +117,7 @@ class PhotosController extends Controller
                 Tag::find($photoTagId)->delete();
             }
         }
-        return redirect()->back();
+        return redirect('/photos');
 //        return 204;
     }
 }

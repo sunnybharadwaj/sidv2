@@ -12,7 +12,7 @@
 
                 {{--Bottom Nav--}}
                 <div class="viewer-nav">
-                    <a href="">Full Screen</a>
+                    <a id="fullscreen-btn" href="javascript:void(0)">Full Screen</a>
                     <a href="">Open in new tab</a>
                     <a href="">Back to Photos</a>
                     <a href="">Show Thumbnails</a>
@@ -21,8 +21,8 @@
             </div>
             <div id="photo-block" class="w-full md:w-10/12 xl:w-10/12">
                 <div class="slideshow-wrapper">
-                    <img class="photo" src="{{url('/media/temp_hd.jpg')}}" alt="">
-                    <img class="photo" src="{{url('/media/temp_hd2.jpg')}}" alt="">
+                    <img class="photo" src="{{$photo->thumbnail_hd}}" alt="">
+                    {{--<img class="photo" src="/media/temp_hd.jpg" alt="">--}}
                 </div>
                 <div class="slideshow-buttons">
                     <div class="back ss-btn"></div>
@@ -33,8 +33,8 @@
                 </div>
 
                 <div class="hover-buttons">
-                    <div href="" class="hover-btn prev">< prev</div> /
-                    <div href="" class="hover-btn next">next ></div>
+                    <a href="{{'/prev/' . $categoryId . '/'. $photo->id}}" class="hover-btn prev">< prev</a> /
+                    <a href="{{'/next/' . $categoryId . '/'. $photo->id}}" class="hover-btn next">next ></a>
                 </div>
 
 

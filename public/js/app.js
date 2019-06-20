@@ -34972,16 +34972,17 @@ module.exports = function(module) {
 //     el: '#app',
 // });
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); //Load Screen
+// window.onload = function() {
+//     setTimeout(function() {
+//         $('#load-screen').removeClass('active');
+//     }, 800);
+//
+// };
 
 
-window.onload = function () {
-  setTimeout(function () {
-    $('#load-screen').removeClass('active');
-  }, 800);
-}; //Slideshow control
+$('#load-screen').removeClass('active'); //Slideshow control
 // if(window.location)
 //next
-
 
 $('.next').click(function () {
   var currentElem = $('.slideshow-wrapper .photo.active');
@@ -34993,6 +34994,9 @@ $('.next').click(function () {
     currentElem.removeClass('active');
     currentElem.next().addClass('active');
   }
+});
+$('#fullscreen-btn').click(function () {
+  $('#photo-block').addClass('fullscreen');
 }); //prev
 
 $('.prev').click(function () {
@@ -35006,34 +35010,6 @@ $('#mobile-nav-btn').click(function () {
 });
 $('#mobile-menu .close-btn').click(function () {
   $('#mobile-menu').addClass('hidden');
-});
-$('#add-tag').click(function () {
-  $(this).remove();
-  $('#add-tags').removeClass('hidden');
-});
-$('#another-tag').click(function () {
-  var elem = $.parseHTML("<input type=\"text\" name=\"newtags[]\" class=\"another-tag block blueprint mb-2\" placeholder=\"Tag\"> <div class=\"mb-2\"></div>");
-  $('#tag-inputs').append(elem);
-});
-$('#photo_hd').change(function () {
-  var fileName = $('#photo_hd').val().split('\\');
-  fileName = fileName[fileName.length - 1];
-
-  if (!fileName) {
-    fileName = "Click here to upload";
-  }
-
-  $(this).prev('label').removeClass('labeled').text(fileName);
-});
-$('#photo_sd').change(function () {
-  var fileName = $('#photo_sd').val().split('\\');
-  fileName = fileName[fileName.length - 1];
-  $(this).prev('label').removeClass('labeled').text(fileName);
-});
-$('#thumbnail_url').change(function () {
-  var fileName = $('#thumbnail_url').val().split('\\');
-  fileName = fileName[fileName.length - 1];
-  $(this).prev('label').removeClass('labeled').text(fileName);
 });
 $('.item').click(function () {
   $(this).children('.full-page-bg').toggleClass('hidden');

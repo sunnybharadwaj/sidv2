@@ -8,7 +8,7 @@
         <div class="mb-6"></div>
         <div class="masonry">
             @foreach($photos as $photo)
-                <a href="/photo/{{$photo->id}}">
+                <a href="/photo/{{$categoryId}}/{{$photo->id}}">
                     <div class="item">
                         <img class="w-full sd-img" src="{{url($photo->thumbnail_sd)}}" alt="">
                     </div>

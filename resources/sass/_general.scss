@@ -34,6 +34,11 @@ a {
   }
 }
 
+.disabled {
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+}
 
 
 .masonry {
@@ -67,3 +72,15 @@ a {
 
 }
 
+.masonry .item {
+  transition: all 150ms ease-in-out;
+}
+
+.masonry .item:hover,
+.masonry .item:focus{
+  opacity: 0.9;
+}
+
+.masonry .item:active {
+  top:1px;
+}

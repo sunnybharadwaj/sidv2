@@ -22,7 +22,7 @@
             </div>
 
             <div class="checkbox field">
-                <label for="tags">Tags</label>
+                <label for="tags">Choose one or more categories:</label>
                 <div class="flex flex-wrap">
                     @foreach($tags as $tag)
                         <div class="w-1/4">
@@ -33,20 +33,8 @@
                         </div>
                     @endforeach
                 </div>
-                <input type="text" name="tags[]" class="hidden" value="null">
+                <a href="/tags/create" target="_blank">Create a new tag</a>
 
-
-                {{--Show if Add a tag is clicked--}}
-                <div id="add-tags" class="mb-4">
-                    <div id="font-bold" class="font-bold mb-2">+ Add Tag(s)</div>
-                    <div id="tag-inputs">
-
-                            <input type="text" name="newtags[]" class="another-tag block mb-2" placeholder="Tag">
-                    </div>
-
-
-                    <a id="another-tag" href="javascript:void(0);" class="form-inline-btn">Add another Tag</a>
-                </div>
             </div>
 
             <div class="field">
