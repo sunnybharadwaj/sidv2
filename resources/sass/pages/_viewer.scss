@@ -1,8 +1,73 @@
 //Viewer v2
-//todo:remove this shit
-#load-screen {
-  display: none;
+
+#viewer-menu-wrapper {
+  position: fixed;
+  z-index: 3000;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+  background: white;
+  top: 30px;
 }
+
+#viewer-menu-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 50px;
+  height: 50px;
+  opacity: 0.3;
+  z-index: 3000;
+
+  &:hover {
+    cursor: pointer;
+    opacity:0.9;
+  }
+
+}
+
+#viewer-menu {
+  padding:20px 25px ;
+  display: block;
+  z-index: 2001;
+  a {
+    display: block;
+    margin-bottom: 15px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+#change-bg {
+  margin-top: 10px;
+  background: #efefef;
+  padding:20px 25px 20px 25px;
+  .box {
+    border: 1px solid #dedede;
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    margin-right: 5px;
+
+
+    &.active {
+      border-color: #ff2222;
+    }
+
+    &:hover {
+      cursor:pointer;
+    }
+
+    &#white-box {
+      background: white;
+    }
+    &#black-box {
+      background: black;
+    }
+  }
+}
+
 
 #viewer {
   background: black;
@@ -77,7 +142,7 @@
     z-index: 1003;
 
     .ss-btn {
-      height: 70vh;
+      height: 100vh;
       display: block;
       width: 100%;
     }

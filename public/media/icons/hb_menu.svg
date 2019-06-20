@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35">
+  <g id="Group_3" data-name="Group 3" transform="translate(-335 -54)">
+    <g id="Rectangle_1" data-name="Rectangle 1" transform="translate(335 54)" fill="#fff" stroke="#000" stroke-width="2">
+      <rect width="35" height="35" stroke="none"/>
+      <rect x="1" y="1" width="33" height="33" fill="none"/>
+    </g>
+    <g id="noun_Hamburger_2623555" transform="translate(341 60)">
+      <g id="Group_2" data-name="Group 2">
+        <g id="Group_1" data-name="Group 1">
+          <path id="Path_1" data-name="Path 1" d="M5,6H19a1,1,0,0,1,0,2H5A1,1,0,0,1,5,6Zm0,5H19a1,1,0,0,1,0,2H5a1,1,0,0,1,0-2Zm0,5H19a1,1,0,0,1,0,2H5a1,1,0,0,1,0-2Z" fill-rule="evenodd"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

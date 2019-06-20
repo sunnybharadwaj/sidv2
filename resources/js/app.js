@@ -83,13 +83,26 @@ $('#mobile-menu .close-btn').click(function() {
 });
 
 
-
-$('.item').click(function() {
-    $(this).children('.full-page-bg').toggleClass('hidden');
+//Viewer
+$('#viewer-menu-btn').click(function() {
+    $('#viewer-menu-wrapper').removeClass('hidden');
 });
 
+$('#close-viewer-menu').click(function() {
+    $('#viewer-menu-wrapper').addClass('hidden');
+});
 
+$('#white-box').click(function() {
+    $('#viewer').css('background','white');
+    $('.box').removeClass('active');
+    $(this).addClass('active');
+});
 
+$('#black-box').click(function() {
+    $('#viewer').css('background','black');
+    $('.box').removeClass('active');
+    $(this).addClass('active');
+});
 
 
 
