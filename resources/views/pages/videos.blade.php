@@ -5,12 +5,12 @@
     <div id="videos" class="relative container mx-auto px-2">
         <div class=""></div>
         <h1 class="category-title">Videos</h1>
-        <div class="yt-cta text-btn md">
+        <a href="https://www.youtube.com/channel/UC39tKHhUeAxv56jsHt1ktDg" target="_blank" class="yt-cta text-btn md">
             <span class="yt-icon">
                 <img class="w-full" src="{{url('/media/icons/yt_icon.png')}}" alt="">
             </span>
             Subscribe to my Channel
-        </div>
+        </a>
         <div class="mb-6"></div>
 
         <div class="flex flex-wrap">
