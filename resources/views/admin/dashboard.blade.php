@@ -55,7 +55,7 @@
                             <a href="/tags/create">Create</a>
                         </div>
                         <span class="component-icon">
-                        {{--<img src="/media/icons/videos.svg" alt="" class="w-full">--}}
+                        <img src="/media/icons/categories.svg" alt="" class="w-full">
                     </span>
                     </div>
                 </div>

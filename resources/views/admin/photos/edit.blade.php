@@ -69,7 +69,7 @@
             </div>
 
             <div class="mb-12"></div>
-            <button class="page-fixed-btn" type="submit">Upload</button>
+            <button class="page-fixed-btn" type="submit">Save Changes</button>
         </form>
     </div>
 @endsection
