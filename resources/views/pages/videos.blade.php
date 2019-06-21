@@ -2,7 +2,7 @@
 
 @section('content')
     @include('partials.header')
-    <div class="relative container mx-auto px-2">
+    <div id="videos" class="relative container mx-auto px-2">
         <div class=""></div>
         <h1 class="category-title">Videos</h1>
         <div class="yt-cta text-btn md">

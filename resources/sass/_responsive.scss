@@ -1,6 +1,34 @@
 @media (max-width: 768px) {
   .container {
-    padding: 0 20px;
+    padding: 0 10px;
+  }
+
+  #footer-menu .link-container a {
+    margin-top: 5px;
+    padding: 10px 0;
+    font-size: 20px;
+    &.active {
+      border: none;
+    }
+
+
+  }
+
+  h1.category-title {
+    margin: 80px auto 60px;
+    text-align: center;
+  }
+
+  .yt-cta {
+    position: static;
+    margin: 0 auto 40px;
+  }
+
+  #videos {
+    h1 {
+      margin-bottom: 20px;
+    }
+    text-align: center;
   }
 
   #mobile-nav-btn {

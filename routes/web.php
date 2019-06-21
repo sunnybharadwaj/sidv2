@@ -38,6 +38,7 @@ Route::group(['middleware' => 'auth'], function () {
 Route::group(['middleware' => 'auth'], function () {
 //    Photos
     Route::get('/photos', 'PhotosController@index');
+    Route::get('/photos/tag/{id}','PhotosController@tagPhotos');
     Route::get('/photos/create', 'PhotosController@create');
     Route::post('/photos', 'PhotosController@store');
     Route::get('/edit/photos/{id}', 'PhotosController@edit');

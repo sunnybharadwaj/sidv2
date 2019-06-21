@@ -30,15 +30,14 @@
 // });
 require('./bootstrap');
 
-//Load Screen
-// window.onload = function() {
-//     setTimeout(function() {
-//         $('#load-screen').removeClass('active');
-//     }, 800);
-//
-// };
+// Load Screen
+window.onload = function() {
+    setTimeout(function() {
+        $('#load-screen').removeClass('active');
+    }, 800);
 
-$('#load-screen').removeClass('active');
+};
+
 
 //Slideshow control
 // if(window.location)

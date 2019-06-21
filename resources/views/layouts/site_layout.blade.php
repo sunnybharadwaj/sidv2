@@ -17,7 +17,8 @@
     </div>
 
 @endif
-    @include ('partials.loadscreen')
+
+
 
     @yield('content')
 

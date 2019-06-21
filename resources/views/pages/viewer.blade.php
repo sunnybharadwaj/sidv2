@@ -17,7 +17,7 @@
             {{--</div>--}}
             <div id="photo-block" class="w-full">
                 <img id="viewer-menu-btn" src="{{url('/media/icons/hb_menu.svg')}}" alt="">
-                <div id="viewer-menu-wrapper" class="">
+                <div id="viewer-menu-wrapper" class="hidden">
                     <div id="viewer-menu">
                         <img src="{{url('/media/logo/logo_line.svg')}}" alt="" class="w-full max-w-xs mb-8 mx-auto">
                         <a href="/">Home</a>

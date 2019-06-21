@@ -14,7 +14,19 @@ class PhotosController extends Controller
     public function index()
     {
         $photos = Photo::all();
-        return view('admin.photos.browse', compact('photos'));
+        $tags = Tag::all();
+        $tagId = null;
+        return view('admin.photos.browse', compact('photos', 'tags', 'tagId'));
+    }
+
+    public function tagPhotos($tagId)
+    {
+        $tags = Tag::all();
+        $photos = Photo::whereHas('tags', function ($query) use ($tagId) {
+            $query->where('id', $tagId);
+        })->get();
+
+        return view('admin.photos.browse', compact('photos', 'tagId', 'tags'));
     }
 
     public function create()
@@ -90,8 +102,8 @@ class PhotosController extends Controller
         }
 
         if ($sd_file) {
-                $sd_url = $sd_file->store('photos_sd', ['disk' => 'public']);
-                $photo->thumbnail_sd = "/storage/" . $sd_url;
+            $sd_url = $sd_file->store('photos_sd', ['disk' => 'public']);
+            $photo->thumbnail_sd = "/storage/" . $sd_url;
         }
 
         $photo->tags()->detach();

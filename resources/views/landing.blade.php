@@ -1,6 +1,7 @@
 @extends('layouts.site_layout')
 
 @section('content')
+    @include ('partials.loadscreen')
     @include('partials.header')
 
     <div class="container mx-auto">

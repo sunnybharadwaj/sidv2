@@ -34971,18 +34971,17 @@ module.exports = function(module) {
 // const app = new Vue({
 //     el: '#app',
 // });
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); //Load Screen
-// window.onload = function() {
-//     setTimeout(function() {
-//         $('#load-screen').removeClass('active');
-//     }, 800);
-//
-// };
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // Load Screen
 
 
-$('#load-screen').removeClass('active'); //Slideshow control
+window.onload = function () {
+  setTimeout(function () {
+    $('#load-screen').removeClass('active');
+  }, 800);
+}; //Slideshow control
 // if(window.location)
 //next
+
 
 $('.next').click(function () {
   var currentElem = $('.slideshow-wrapper .photo.active');

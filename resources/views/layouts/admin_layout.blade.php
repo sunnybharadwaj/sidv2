@@ -28,14 +28,15 @@
         </a>
     </div>
 
+@if(Auth::check())
+        <div id="nav-menu" class="pt-2 pr-2">
+            <a href="{{url('admin')}}" class="home-btn inline-block"><img src="{{url('/media/icons/home_btn.svg')}}" alt="" class="w-full"></a>
+            <a href="/" target="_blank">Site</a>
+            <a href="" target="_blank">Analytics</a>
+            <a href="/logout" class="">Logout</a>
+        </div>
+@endif
 
-    <div id="nav-menu" class="pt-2 pr-2">
-        <a href="{{url('admin')}}" class="home-btn inline-block"><img src="{{url('/media/icons/home_btn.svg')}}" alt=""
-                                                            class="w-full"></a>
-        <a href="/">Site</a>
-        <a href="" target="_blank">Analytics</a>
-        <a href="/logout" class="">Logout</a>
-    </div>
 
 </nav>
 
