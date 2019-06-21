@@ -27,11 +27,11 @@ class MessagesController extends Controller
             $query->message = request('message');
             $query->save();
             session()->flash("message", "Thank you for your message. I'll get back to you as soon as I can.");
-            redirect('/');
+            return redirect('/contact');
 
         } catch (QueryException $ex) {
             session()->flash("message", "Something is wrong. Please try later.");
-            redirect('/');
+            return redirect('/contact');
         }
     }
 }
